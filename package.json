@@ -1,10 +1,10 @@
 {
-  "name": "paella-engage-ui",
+  "name": "paella-engage-ui-4beta-dce",
   "version": "4.0.0",
   "description": "Paella Player for Matterhorn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/polimediaupv/paella-matterhorn.git"
+    "url": "https://github.com/harvard-dce/paella-matterhorn.git"
   },
   "dependencies": {},
   "devDependencies": {
