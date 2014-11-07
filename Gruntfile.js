@@ -204,7 +204,6 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('build.common', ['checksyntax', 'subgrunt:paella', 'copy:paella', 'concat:paella_matterhorn.js', 'merge-json']);
 	
-	grunt.registerTask('build.common', ['subgrunt:paella', 'copy:paella', 'concat:dist.js', 'concat:dist.css']);
 	grunt.registerTask('build.release', ['build.common', 'cssmin:dist']);
 	grunt.registerTask('build.debug', ['build.common']);
 	
