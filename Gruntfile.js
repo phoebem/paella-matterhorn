@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 			paella: {
 				files: [
 					// Basic Paella
-					{expand: true, cwd: 'submodules/paella/build/player', src: ['config/**', 'javascript/**', 'resources/**', 'player.swf'], dest: 'build/'},			
+					{expand: true, cwd: 'submodules/paella/build/player', src: ['localization/**', 'config/**', 'javascript/**', 'resources/**', 'player.swf'], dest: 'build/'},
 					// Paella Matterhorn
 					{expand: true, cwd: 'paella-matterhorn/ui', src: ['**'], dest: 'build/'},
 					{expand: true, src:'plugins/*/resources/**', dest: 'build/resources/plugins/',
@@ -150,8 +150,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('default', ['build.release']);
 	grunt.registerTask('checksyntax', ['jshint', 'csslint']);
 	
-	grunt.registerTask('build.common', ['update_submodules', 'subgrunt:paella', 'copy:paella', 'concat:dist.js', 'concat:dist.css']);
-	grunt.registerTask('build.release', ['build.common', 'uglify:dist', 'cssmin:dist']);
+	grunt.registerTask('build.common', ['subgrunt:paella', 'copy:paella', 'concat:dist.js', 'concat:dist.css']);
+	grunt.registerTask('build.release', ['build.common', 'cssmin:dist']);
 	grunt.registerTask('build.debug', ['build.common']);
 	
 	grunt.registerTask('server.release', ['build.release', 'express', 'watch:release']);		
