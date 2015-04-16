@@ -101,7 +101,8 @@ var MHVideoLoader = Class.create(paella.VideoLoader, {
 		var blackboardSource = {type:"image/jpeg", frames:{}, count:0, duration: duration, res:{w:1280, h:720}};
 		// Read the attachments
 		for (i=0;i<attachments.length;++i) {
-		       var currentAttachment = attachments[i];
+		       var currentAttachment = attachments[i
+		       if (currentAttachment === undefined) continue;
                        try { // Live has no attachments, currentAttachment === undefined
 			if (currentAttachment.type == "blackboard/image") {
 				if (/time=T(\d+):(\d+):(\d+)/.test(currentAttachment.ref)) {
